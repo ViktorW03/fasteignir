@@ -1,0 +1,2122 @@
+
+input Boolean_comparison_exp {
+  _eq: Boolean
+  _gt: Boolean
+  _gte: Boolean
+  _in: [Boolean!]
+  _is_null: Boolean
+  _lt: Boolean
+  _lte: Boolean
+  _neq: Boolean
+  _nin: [Boolean!]
+}
+
+type CountPromoResult {
+  response: Int!
+}
+
+type CurrentCount {
+  total: Int!
+  week: Int!
+}
+
+type InquireOutput {
+  errors: [String]!
+  success: Boolean!
+}
+
+type InquiryCp {
+  answer: String!
+  question: String!
+}
+
+input Int_comparison_exp {
+  _eq: Int
+  _gt: Int
+  _gte: Int
+  _in: [Int!]
+  _is_null: Boolean
+  _lt: Int
+  _lte: Int
+  _neq: Int
+  _nin: [Int!]
+}
+
+input String_comparison_exp {
+  _eq: String
+  _gt: String
+  _gte: String
+  _ilike: String
+  _in: [String!]
+  _iregex: String
+  _is_null: Boolean
+  _like: String
+  _lt: String
+  _lte: String
+  _neq: String
+  _nilike: String
+  _nin: [String!]
+  _niregex: String
+  _nlike: String
+  _nregex: String
+  _nsimilar: String
+  _regex: String
+  _similar: String
+}
+
+input bigint_comparison_exp {
+  _eq: bigint
+  _gt: bigint
+  _gte: bigint
+  _in: [bigint!]
+  _is_null: Boolean
+  _lt: bigint
+  _lte: bigint
+  _neq: bigint
+  _nin: [bigint!]
+}
+
+input bpchar_comparison_exp {
+  _eq: bpchar
+  _gt: bpchar
+  _gte: bpchar
+  _ilike: bpchar
+  _in: [bpchar!]
+  _iregex: bpchar
+  _is_null: Boolean
+  _like: bpchar
+  _lt: bpchar
+  _lte: bpchar
+  _neq: bpchar
+  _nilike: bpchar
+  _nin: [bpchar!]
+  _niregex: bpchar
+  _nlike: bpchar
+  _nregex: bpchar
+  _nsimilar: bpchar
+  _regex: bpchar
+  _similar: bpchar
+}
+
+input date_comparison_exp {
+  _eq: date
+  _gt: date
+  _gte: date
+  _in: [date!]
+  _is_null: Boolean
+  _lt: date
+  _lte: date
+  _neq: date
+  _nin: [date!]
+}
+
+input float8_comparison_exp {
+  _eq: float8
+  _gt: float8
+  _gte: float8
+  _in: [float8!]
+  _is_null: Boolean
+  _lt: float8
+  _lte: float8
+  _neq: float8
+  _nin: [float8!]
+}
+
+type fs_attachment {
+  file: String!
+  fs_fasteign: fs_fasteign  # An object relationship
+  id: Int!
+  title: String!
+}
+
+input fs_attachment_aggregate_order_by {
+  avg: fs_attachment_avg_order_by
+  count: order_by
+  max: fs_attachment_max_order_by
+  min: fs_attachment_min_order_by
+  stddev: fs_attachment_stddev_order_by
+  stddev_pop: fs_attachment_stddev_pop_order_by
+  stddev_samp: fs_attachment_stddev_samp_order_by
+  sum: fs_attachment_sum_order_by
+  var_pop: fs_attachment_var_pop_order_by
+  var_samp: fs_attachment_var_samp_order_by
+  variance: fs_attachment_variance_order_by
+}
+
+input fs_attachment_avg_order_by {
+  id: order_by
+}
+
+input fs_attachment_bool_exp {
+  _and: [fs_attachment_bool_exp!]
+  _not: fs_attachment_bool_exp
+  _or: [fs_attachment_bool_exp!]
+  file: String_comparison_exp
+  fs_fasteign: fs_fasteign_bool_exp
+  id: Int_comparison_exp
+  title: String_comparison_exp
+}
+
+input fs_attachment_max_order_by {
+  file: order_by
+  id: order_by
+  title: order_by
+}
+
+input fs_attachment_min_order_by {
+  file: order_by
+  id: order_by
+  title: order_by
+}
+
+input fs_attachment_order_by {
+  file: order_by
+  fs_fasteign: fs_fasteign_order_by
+  id: order_by
+  title: order_by
+}
+
+enum fs_attachment_select_column {
+  file
+  id
+  title
+}
+
+input fs_attachment_stddev_order_by {
+  id: order_by
+}
+
+input fs_attachment_stddev_pop_order_by {
+  id: order_by
+}
+
+input fs_attachment_stddev_samp_order_by {
+  id: order_by
+}
+
+input fs_attachment_sum_order_by {
+  id: order_by
+}
+
+input fs_attachment_var_pop_order_by {
+  id: order_by
+}
+
+input fs_attachment_var_samp_order_by {
+  id: order_by
+}
+
+input fs_attachment_variance_order_by {
+  id: order_by
+}
+
+type fs_fasteign {
+  address_search_id: String
+  agency: fs_sala  # An object relationship
+  ahvilandi_lan: Int
+  appended_land: float8
+  attachments(distinct_on: [fs_attachment_select_column!], limit: Int, offset: Int, order_by: [fs_attachment_order_by!], where: fs_attachment_bool_exp): [fs_attachment!]!  # An array relationship
+  aukaibud: Boolean
+  bilskur: Boolean
+  br_dags: timestamptz
+  brunabotamat: bigint
+  bygg_ar: smallint
+  created: timestamp
+  dealer_email: String
+  eign_id: Int!
+  electric_car: Boolean
+  embed: String
+  fastano: Int
+  fasteignamat: bigint
+  favorite: fs_favorite  # An object relationship
+  fermetrar: float8
+  fermetraverd: float8
+  fjoldi_badherb: smallint
+  fjoldi_haeda: smallint
+  fjoldi_herb: smallint
+  fjoldi_svefnhb: smallint
+  gardur: Boolean
+  gata: String
+  generated_fts: tsvector
+  greidslumat: Boolean!
+  heimilisfang: String
+  hverfi: String
+  images(distinct_on: [fs_img_select_column!], limit: Int, offset: Int, order_by: [fs_img_order_by!], where: fs_img_bool_exp): [fs_img!]!  # An array relationship
+  inngangur: String
+  latest_openhouse: fs_latest_openhouse  # An object relationship
+  latitude: float8
+  longitude: float8
+  lyfta: Boolean!
+  lysing: String
+  makaskipti: Boolean
+  normalized_heimilisfang: String
+  nybygging: Boolean!
+  parking: Boolean
+  parking_shelter: Boolean
+  pet_allowed: Boolean
+  postal_code: fs_postal_code  # An object relationship
+  postfang: smallint
+  price_search_id: String
+  promo: fs_realestate_ad  # An object relationship
+  seniors: Boolean
+  sent_dags: timestamptz
+  size_search_id: String
+  skiptanleg: Boolean!
+  svalir: Boolean
+  syna: Boolean!
+  teg_eign: String
+  verd: bigint
+  wheelchair_acc: Boolean
+  zip_search_id: String
+}
+
+type fs_fasteign_aggregate {
+  aggregate: fs_fasteign_aggregate_fields
+  nodes: [fs_fasteign!]!
+}
+
+type fs_fasteign_aggregate_fields {
+  avg: fs_fasteign_avg_fields
+  count(columns: [fs_fasteign_select_column!], distinct: Boolean): Int!
+  max: fs_fasteign_max_fields
+  min: fs_fasteign_min_fields
+  stddev: fs_fasteign_stddev_fields
+  stddev_pop: fs_fasteign_stddev_pop_fields
+  stddev_samp: fs_fasteign_stddev_samp_fields
+  sum: fs_fasteign_sum_fields
+  var_pop: fs_fasteign_var_pop_fields
+  var_samp: fs_fasteign_var_samp_fields
+  variance: fs_fasteign_variance_fields
+}
+
+type fs_fasteign_avg_fields {
+  ahvilandi_lan: Float
+  appended_land: Float
+  brunabotamat: Float
+  bygg_ar: Float
+  eign_id: Float
+  fastano: Float
+  fasteignamat: Float
+  fermetrar: Float
+  fermetraverd: Float
+  fjoldi_badherb: Float
+  fjoldi_haeda: Float
+  fjoldi_herb: Float
+  fjoldi_svefnhb: Float
+  latitude: Float
+  longitude: Float
+  postfang: Float
+  verd: Float
+}
+
+input fs_fasteign_bool_exp {
+  _and: [fs_fasteign_bool_exp!]
+  _not: fs_fasteign_bool_exp
+  _or: [fs_fasteign_bool_exp!]
+  address_search_id: String_comparison_exp
+  agency: fs_sala_bool_exp
+  ahvilandi_lan: Int_comparison_exp
+  appended_land: float8_comparison_exp
+  attachments: fs_attachment_bool_exp
+  aukaibud: Boolean_comparison_exp
+  bilskur: Boolean_comparison_exp
+  br_dags: timestamptz_comparison_exp
+  brunabotamat: bigint_comparison_exp
+  bygg_ar: smallint_comparison_exp
+  created: timestamp_comparison_exp
+  dealer_email: String_comparison_exp
+  eign_id: Int_comparison_exp
+  electric_car: Boolean_comparison_exp
+  embed: String_comparison_exp
+  fastano: Int_comparison_exp
+  fasteignamat: bigint_comparison_exp
+  favorite: fs_favorite_bool_exp
+  fermetrar: float8_comparison_exp
+  fermetraverd: float8_comparison_exp
+  fjoldi_badherb: smallint_comparison_exp
+  fjoldi_haeda: smallint_comparison_exp
+  fjoldi_herb: smallint_comparison_exp
+  fjoldi_svefnhb: smallint_comparison_exp
+  gardur: Boolean_comparison_exp
+  gata: String_comparison_exp
+  generated_fts: tsvector_comparison_exp
+  greidslumat: Boolean_comparison_exp
+  heimilisfang: String_comparison_exp
+  hverfi: String_comparison_exp
+  images: fs_img_bool_exp
+  inngangur: String_comparison_exp
+  latest_openhouse: fs_latest_openhouse_bool_exp
+  latitude: float8_comparison_exp
+  longitude: float8_comparison_exp
+  lyfta: Boolean_comparison_exp
+  lysing: String_comparison_exp
+  makaskipti: Boolean_comparison_exp
+  normalized_heimilisfang: String_comparison_exp
+  nybygging: Boolean_comparison_exp
+  parking: Boolean_comparison_exp
+  parking_shelter: Boolean_comparison_exp
+  pet_allowed: Boolean_comparison_exp
+  postal_code: fs_postal_code_bool_exp
+  postfang: smallint_comparison_exp
+  price_search_id: String_comparison_exp
+  promo: fs_realestate_ad_bool_exp
+  seniors: Boolean_comparison_exp
+  sent_dags: timestamptz_comparison_exp
+  size_search_id: String_comparison_exp
+  skiptanleg: Boolean_comparison_exp
+  svalir: Boolean_comparison_exp
+  syna: Boolean_comparison_exp
+  teg_eign: String_comparison_exp
+  verd: bigint_comparison_exp
+  wheelchair_acc: Boolean_comparison_exp
+  zip_search_id: String_comparison_exp
+}
+
+type fs_fasteign_max_fields {
+  address_search_id: String
+  ahvilandi_lan: Int
+  appended_land: float8
+  br_dags: timestamptz
+  brunabotamat: bigint
+  bygg_ar: smallint
+  created: timestamp
+  dealer_email: String
+  eign_id: Int
+  embed: String
+  fastano: Int
+  fasteignamat: bigint
+  fermetrar: float8
+  fermetraverd: float8
+  fjoldi_badherb: smallint
+  fjoldi_haeda: smallint
+  fjoldi_herb: smallint
+  fjoldi_svefnhb: smallint
+  gata: String
+  heimilisfang: String
+  hverfi: String
+  inngangur: String
+  latitude: float8
+  longitude: float8
+  lysing: String
+  normalized_heimilisfang: String
+  postfang: smallint
+  price_search_id: String
+  sent_dags: timestamptz
+  size_search_id: String
+  teg_eign: String
+  verd: bigint
+  zip_search_id: String
+}
+
+type fs_fasteign_min_fields {
+  address_search_id: String
+  ahvilandi_lan: Int
+  appended_land: float8
+  br_dags: timestamptz
+  brunabotamat: bigint
+  bygg_ar: smallint
+  created: timestamp
+  dealer_email: String
+  eign_id: Int
+  embed: String
+  fastano: Int
+  fasteignamat: bigint
+  fermetrar: float8
+  fermetraverd: float8
+  fjoldi_badherb: smallint
+  fjoldi_haeda: smallint
+  fjoldi_herb: smallint
+  fjoldi_svefnhb: smallint
+  gata: String
+  heimilisfang: String
+  hverfi: String
+  inngangur: String
+  latitude: float8
+  longitude: float8
+  lysing: String
+  normalized_heimilisfang: String
+  postfang: smallint
+  price_search_id: String
+  sent_dags: timestamptz
+  size_search_id: String
+  teg_eign: String
+  verd: bigint
+  zip_search_id: String
+}
+
+input fs_fasteign_order_by {
+  address_search_id: order_by
+  agency: fs_sala_order_by
+  ahvilandi_lan: order_by
+  appended_land: order_by
+  attachments_aggregate: fs_attachment_aggregate_order_by
+  aukaibud: order_by
+  bilskur: order_by
+  br_dags: order_by
+  brunabotamat: order_by
+  bygg_ar: order_by
+  created: order_by
+  dealer_email: order_by
+  eign_id: order_by
+  electric_car: order_by
+  embed: order_by
+  fastano: order_by
+  fasteignamat: order_by
+  favorite: fs_favorite_order_by
+  fermetrar: order_by
+  fermetraverd: order_by
+  fjoldi_badherb: order_by
+  fjoldi_haeda: order_by
+  fjoldi_herb: order_by
+  fjoldi_svefnhb: order_by
+  gardur: order_by
+  gata: order_by
+  generated_fts: order_by
+  greidslumat: order_by
+  heimilisfang: order_by
+  hverfi: order_by
+  images_aggregate: fs_img_aggregate_order_by
+  inngangur: order_by
+  latest_openhouse: fs_latest_openhouse_order_by
+  latitude: order_by
+  longitude: order_by
+  lyfta: order_by
+  lysing: order_by
+  makaskipti: order_by
+  normalized_heimilisfang: order_by
+  nybygging: order_by
+  parking: order_by
+  parking_shelter: order_by
+  pet_allowed: order_by
+  postal_code: fs_postal_code_order_by
+  postfang: order_by
+  price_search_id: order_by
+  promo: fs_realestate_ad_order_by
+  seniors: order_by
+  sent_dags: order_by
+  size_search_id: order_by
+  skiptanleg: order_by
+  svalir: order_by
+  syna: order_by
+  teg_eign: order_by
+  verd: order_by
+  wheelchair_acc: order_by
+  zip_search_id: order_by
+}
+
+enum fs_fasteign_select_column {
+  address_search_id
+  ahvilandi_lan
+  appended_land
+  aukaibud
+  bilskur
+  br_dags
+  brunabotamat
+  bygg_ar
+  created
+  dealer_email
+  eign_id
+  electric_car
+  embed
+  fastano
+  fasteignamat
+  fermetrar
+  fermetraverd
+  fjoldi_badherb
+  fjoldi_haeda
+  fjoldi_herb
+  fjoldi_svefnhb
+  gardur
+  gata
+  generated_fts
+  greidslumat
+  heimilisfang
+  hverfi
+  inngangur
+  latitude
+  longitude
+  lyfta
+  lysing
+  makaskipti
+  normalized_heimilisfang
+  nybygging
+  parking
+  parking_shelter
+  pet_allowed
+  postfang
+  price_search_id
+  seniors
+  sent_dags
+  size_search_id
+  skiptanleg
+  svalir
+  syna
+  teg_eign
+  verd
+  wheelchair_acc
+  zip_search_id
+}
+
+type fs_fasteign_stddev_fields {
+  ahvilandi_lan: Float
+  appended_land: Float
+  brunabotamat: Float
+  bygg_ar: Float
+  eign_id: Float
+  fastano: Float
+  fasteignamat: Float
+  fermetrar: Float
+  fermetraverd: Float
+  fjoldi_badherb: Float
+  fjoldi_haeda: Float
+  fjoldi_herb: Float
+  fjoldi_svefnhb: Float
+  latitude: Float
+  longitude: Float
+  postfang: Float
+  verd: Float
+}
+
+type fs_fasteign_stddev_pop_fields {
+  ahvilandi_lan: Float
+  appended_land: Float
+  brunabotamat: Float
+  bygg_ar: Float
+  eign_id: Float
+  fastano: Float
+  fasteignamat: Float
+  fermetrar: Float
+  fermetraverd: Float
+  fjoldi_badherb: Float
+  fjoldi_haeda: Float
+  fjoldi_herb: Float
+  fjoldi_svefnhb: Float
+  latitude: Float
+  longitude: Float
+  postfang: Float
+  verd: Float
+}
+
+type fs_fasteign_stddev_samp_fields {
+  ahvilandi_lan: Float
+  appended_land: Float
+  brunabotamat: Float
+  bygg_ar: Float
+  eign_id: Float
+  fastano: Float
+  fasteignamat: Float
+  fermetrar: Float
+  fermetraverd: Float
+  fjoldi_badherb: Float
+  fjoldi_haeda: Float
+  fjoldi_herb: Float
+  fjoldi_svefnhb: Float
+  latitude: Float
+  longitude: Float
+  postfang: Float
+  verd: Float
+}
+
+type fs_fasteign_sum_fields {
+  ahvilandi_lan: Int
+  appended_land: float8
+  brunabotamat: bigint
+  bygg_ar: smallint
+  eign_id: Int
+  fastano: Int
+  fasteignamat: bigint
+  fermetrar: float8
+  fermetraverd: float8
+  fjoldi_badherb: smallint
+  fjoldi_haeda: smallint
+  fjoldi_herb: smallint
+  fjoldi_svefnhb: smallint
+  latitude: float8
+  longitude: float8
+  postfang: smallint
+  verd: bigint
+}
+
+type fs_fasteign_var_pop_fields {
+  ahvilandi_lan: Float
+  appended_land: Float
+  brunabotamat: Float
+  bygg_ar: Float
+  eign_id: Float
+  fastano: Float
+  fasteignamat: Float
+  fermetrar: Float
+  fermetraverd: Float
+  fjoldi_badherb: Float
+  fjoldi_haeda: Float
+  fjoldi_herb: Float
+  fjoldi_svefnhb: Float
+  latitude: Float
+  longitude: Float
+  postfang: Float
+  verd: Float
+}
+
+type fs_fasteign_var_samp_fields {
+  ahvilandi_lan: Float
+  appended_land: Float
+  brunabotamat: Float
+  bygg_ar: Float
+  eign_id: Float
+  fastano: Float
+  fasteignamat: Float
+  fermetrar: Float
+  fermetraverd: Float
+  fjoldi_badherb: Float
+  fjoldi_haeda: Float
+  fjoldi_herb: Float
+  fjoldi_svefnhb: Float
+  latitude: Float
+  longitude: Float
+  postfang: Float
+  verd: Float
+}
+
+type fs_fasteign_variance_fields {
+  ahvilandi_lan: Float
+  appended_land: Float
+  brunabotamat: Float
+  bygg_ar: Float
+  eign_id: Float
+  fastano: Float
+  fasteignamat: Float
+  fermetrar: Float
+  fermetraverd: Float
+  fjoldi_badherb: Float
+  fjoldi_haeda: Float
+  fjoldi_herb: Float
+  fjoldi_svefnhb: Float
+  latitude: Float
+  longitude: Float
+  postfang: Float
+  verd: Float
+}
+
+type fs_favorite {
+  created: timestamp!
+  fs_fasteign: fs_fasteign  # An object relationship
+  id: Int!
+  property: rentals_property  # An object relationship
+  realestate_id: Int
+  rental_id: Int
+}
+
+input fs_favorite_bool_exp {
+  _and: [fs_favorite_bool_exp!]
+  _not: fs_favorite_bool_exp
+  _or: [fs_favorite_bool_exp!]
+  created: timestamp_comparison_exp
+  fs_fasteign: fs_fasteign_bool_exp
+  id: Int_comparison_exp
+  property: rentals_property_bool_exp
+  realestate_id: Int_comparison_exp
+  rental_id: Int_comparison_exp
+}
+
+input fs_favorite_order_by {
+  created: order_by
+  fs_fasteign: fs_fasteign_order_by
+  id: order_by
+  property: rentals_property_order_by
+  realestate_id: order_by
+  rental_id: order_by
+}
+
+enum fs_favorite_select_column {
+  created
+  id
+  realestate_id
+  rental_id
+}
+
+input fs_feedback_insert_input {
+  text: String
+}
+
+type fs_feedback_mutation_response {
+  affected_rows: Int!  # number of rows affected by the mutation
+}
+
+type fs_img {
+  big: String
+  big_h: String
+  e_low: String
+  id: Int!
+  imgno: smallint!
+  low: String
+  regular: String
+  regular_h: String
+  small: String
+  small_h: String
+}
+
+input fs_img_aggregate_order_by {
+  avg: fs_img_avg_order_by
+  count: order_by
+  max: fs_img_max_order_by
+  min: fs_img_min_order_by
+  stddev: fs_img_stddev_order_by
+  stddev_pop: fs_img_stddev_pop_order_by
+  stddev_samp: fs_img_stddev_samp_order_by
+  sum: fs_img_sum_order_by
+  var_pop: fs_img_var_pop_order_by
+  var_samp: fs_img_var_samp_order_by
+  variance: fs_img_variance_order_by
+}
+
+input fs_img_avg_order_by {
+  id: order_by
+  imgno: order_by
+}
+
+input fs_img_bool_exp {
+  _and: [fs_img_bool_exp!]
+  _not: fs_img_bool_exp
+  _or: [fs_img_bool_exp!]
+  big: String_comparison_exp
+  big_h: String_comparison_exp
+  e_low: String_comparison_exp
+  id: Int_comparison_exp
+  imgno: smallint_comparison_exp
+  low: String_comparison_exp
+  regular: String_comparison_exp
+  regular_h: String_comparison_exp
+  small: String_comparison_exp
+  small_h: String_comparison_exp
+}
+
+input fs_img_max_order_by {
+  big: order_by
+  big_h: order_by
+  e_low: order_by
+  id: order_by
+  imgno: order_by
+  low: order_by
+  regular: order_by
+  regular_h: order_by
+  small: order_by
+  small_h: order_by
+}
+
+input fs_img_min_order_by {
+  big: order_by
+  big_h: order_by
+  e_low: order_by
+  id: order_by
+  imgno: order_by
+  low: order_by
+  regular: order_by
+  regular_h: order_by
+  small: order_by
+  small_h: order_by
+}
+
+input fs_img_order_by {
+  big: order_by
+  big_h: order_by
+  e_low: order_by
+  id: order_by
+  imgno: order_by
+  low: order_by
+  regular: order_by
+  regular_h: order_by
+  small: order_by
+  small_h: order_by
+}
+
+enum fs_img_select_column {
+  big
+  big_h
+  e_low
+  id
+  imgno
+  low
+  regular
+  regular_h
+  small
+  small_h
+}
+
+input fs_img_stddev_order_by {
+  id: order_by
+  imgno: order_by
+}
+
+input fs_img_stddev_pop_order_by {
+  id: order_by
+  imgno: order_by
+}
+
+input fs_img_stddev_samp_order_by {
+  id: order_by
+  imgno: order_by
+}
+
+input fs_img_sum_order_by {
+  id: order_by
+  imgno: order_by
+}
+
+input fs_img_var_pop_order_by {
+  id: order_by
+  imgno: order_by
+}
+
+input fs_img_var_samp_order_by {
+  id: order_by
+  imgno: order_by
+}
+
+input fs_img_variance_order_by {
+  id: order_by
+  imgno: order_by
+}
+
+type fs_latest_openhouse {
+  close: time
+  date: date
+  dt_search_id: String
+  id: Int
+  open: time
+}
+
+input fs_latest_openhouse_bool_exp {
+  _and: [fs_latest_openhouse_bool_exp!]
+  _not: fs_latest_openhouse_bool_exp
+  _or: [fs_latest_openhouse_bool_exp!]
+  close: time_comparison_exp
+  date: date_comparison_exp
+  dt_search_id: String_comparison_exp
+  id: Int_comparison_exp
+  open: time_comparison_exp
+}
+
+input fs_latest_openhouse_order_by {
+  close: order_by
+  date: order_by
+  dt_search_id: order_by
+  id: order_by
+  open: order_by
+}
+
+enum fs_latest_openhouse_select_column {
+  close
+  date
+  dt_search_id
+  id
+  open
+}
+
+type fs_popular_today {
+  address: String
+  cnt: bigint
+  id: Int
+}
+
+input fs_popular_today_bool_exp {
+  _and: [fs_popular_today_bool_exp!]
+  _not: fs_popular_today_bool_exp
+  _or: [fs_popular_today_bool_exp!]
+  address: String_comparison_exp
+  cnt: bigint_comparison_exp
+  id: Int_comparison_exp
+}
+
+input fs_popular_today_order_by {
+  address: order_by
+  cnt: order_by
+  id: order_by
+}
+
+enum fs_popular_today_select_column {
+  address
+  cnt
+  id
+}
+
+type fs_popular_week {
+  address: String
+  cnt: bigint
+  id: Int
+}
+
+input fs_popular_week_bool_exp {
+  _and: [fs_popular_week_bool_exp!]
+  _not: fs_popular_week_bool_exp
+  _or: [fs_popular_week_bool_exp!]
+  address: String_comparison_exp
+  cnt: bigint_comparison_exp
+  id: Int_comparison_exp
+}
+
+input fs_popular_week_order_by {
+  address: order_by
+  cnt: order_by
+  id: order_by
+}
+
+enum fs_popular_week_select_column {
+  address
+  cnt
+  id
+}
+
+type fs_popular_yesterday {
+  address: String
+  cnt: bigint
+  id: Int
+}
+
+input fs_popular_yesterday_bool_exp {
+  _and: [fs_popular_yesterday_bool_exp!]
+  _not: fs_popular_yesterday_bool_exp
+  _or: [fs_popular_yesterday_bool_exp!]
+  address: String_comparison_exp
+  cnt: bigint_comparison_exp
+  id: Int_comparison_exp
+}
+
+input fs_popular_yesterday_order_by {
+  address: order_by
+  cnt: order_by
+  id: order_by
+}
+
+enum fs_popular_yesterday_select_column {
+  address
+  cnt
+  id
+}
+
+type fs_postal_code {
+  baer: String
+  baer_thgf: String
+  fs_count: bigint
+  hverfi: String
+  landshluti: smallint
+  postnr: Int
+}
+
+input fs_postal_code_bool_exp {
+  _and: [fs_postal_code_bool_exp!]
+  _not: fs_postal_code_bool_exp
+  _or: [fs_postal_code_bool_exp!]
+  baer: String_comparison_exp
+  baer_thgf: String_comparison_exp
+  fs_count: bigint_comparison_exp
+  hverfi: String_comparison_exp
+  landshluti: smallint_comparison_exp
+  postnr: Int_comparison_exp
+}
+
+input fs_postal_code_order_by {
+  baer: order_by
+  baer_thgf: order_by
+  fs_count: order_by
+  hverfi: order_by
+  landshluti: order_by
+  postnr: order_by
+}
+
+enum fs_postal_code_select_column {
+  baer
+  baer_thgf
+  fs_count
+  hverfi
+  landshluti
+  postnr
+}
+
+type fs_purchase_history {
+  byggar: String
+  created: timestamp!
+  einflm: numeric
+  emnr: smallint
+  epilog: String
+  faerslunumer: bigint!
+  fasteignamat: Int
+  fastnum: Int
+  fullbuid: Boolean
+  heimlilisfang: String
+  heinum: Int
+  id: Int!
+  kaupverd: Int
+  lod_flm: numeric
+  postnr: String
+  skjalanumer: String
+  sveitarfelag: String
+  svfn: String
+  tegund: String
+  thinglystdags: timestamp
+  updated: timestamp
+  utgdag: timestamp
+}
+
+input fs_purchase_history_bool_exp {
+  _and: [fs_purchase_history_bool_exp!]
+  _not: fs_purchase_history_bool_exp
+  _or: [fs_purchase_history_bool_exp!]
+  byggar: String_comparison_exp
+  created: timestamp_comparison_exp
+  einflm: numeric_comparison_exp
+  emnr: smallint_comparison_exp
+  epilog: String_comparison_exp
+  faerslunumer: bigint_comparison_exp
+  fasteignamat: Int_comparison_exp
+  fastnum: Int_comparison_exp
+  fullbuid: Boolean_comparison_exp
+  heimlilisfang: String_comparison_exp
+  heinum: Int_comparison_exp
+  id: Int_comparison_exp
+  kaupverd: Int_comparison_exp
+  lod_flm: numeric_comparison_exp
+  postnr: String_comparison_exp
+  skjalanumer: String_comparison_exp
+  sveitarfelag: String_comparison_exp
+  svfn: String_comparison_exp
+  tegund: String_comparison_exp
+  thinglystdags: timestamp_comparison_exp
+  updated: timestamp_comparison_exp
+  utgdag: timestamp_comparison_exp
+}
+
+input fs_purchase_history_order_by {
+  byggar: order_by
+  created: order_by
+  einflm: order_by
+  emnr: order_by
+  epilog: order_by
+  faerslunumer: order_by
+  fasteignamat: order_by
+  fastnum: order_by
+  fullbuid: order_by
+  heimlilisfang: order_by
+  heinum: order_by
+  id: order_by
+  kaupverd: order_by
+  lod_flm: order_by
+  postnr: order_by
+  skjalanumer: order_by
+  sveitarfelag: order_by
+  svfn: order_by
+  tegund: order_by
+  thinglystdags: order_by
+  updated: order_by
+  utgdag: order_by
+}
+
+enum fs_purchase_history_select_column {
+  byggar
+  created
+  einflm
+  emnr
+  epilog
+  faerslunumer
+  fasteignamat
+  fastnum
+  fullbuid
+  heimlilisfang
+  heinum
+  id
+  kaupverd
+  lod_flm
+  postnr
+  skjalanumer
+  sveitarfelag
+  svfn
+  tegund
+  thinglystdags
+  updated
+  utgdag
+}
+
+type fs_random_agencies {
+  logo: String
+  nafn: String
+  sala_id: Int
+  vefslod: String
+}
+
+input fs_random_agencies_bool_exp {
+  _and: [fs_random_agencies_bool_exp!]
+  _not: fs_random_agencies_bool_exp
+  _or: [fs_random_agencies_bool_exp!]
+  logo: String_comparison_exp
+  nafn: String_comparison_exp
+  sala_id: Int_comparison_exp
+  vefslod: String_comparison_exp
+}
+
+input fs_random_agencies_order_by {
+  logo: order_by
+  nafn: order_by
+  sala_id: order_by
+  vefslod: order_by
+}
+
+enum fs_random_agencies_select_column {
+  logo
+  nafn
+  sala_id
+  vefslod
+}
+
+input fs_random_promo_args {
+  search: String
+}
+
+type fs_realestate_ad {
+  seckey: bpchar
+}
+
+input fs_realestate_ad_bool_exp {
+  _and: [fs_realestate_ad_bool_exp!]
+  _not: fs_realestate_ad_bool_exp
+  _or: [fs_realestate_ad_bool_exp!]
+  seckey: bpchar_comparison_exp
+}
+
+input fs_realestate_ad_order_by {
+  seckey: order_by
+}
+
+enum fs_realestate_ad_select_column {
+  seckey
+}
+
+type fs_sala {
+  email_tl: String
+  heimilisfang: String
+  logo: String
+  logo_url: String
+  nafn: String
+  postnumer: String
+  sala_id: Int!
+  simi: String
+  vefslod: String
+}
+
+input fs_sala_bool_exp {
+  _and: [fs_sala_bool_exp!]
+  _not: fs_sala_bool_exp
+  _or: [fs_sala_bool_exp!]
+  email_tl: String_comparison_exp
+  heimilisfang: String_comparison_exp
+  logo: String_comparison_exp
+  logo_url: String_comparison_exp
+  nafn: String_comparison_exp
+  postnumer: String_comparison_exp
+  sala_id: Int_comparison_exp
+  simi: String_comparison_exp
+  vefslod: String_comparison_exp
+}
+
+input fs_sala_order_by {
+  email_tl: order_by
+  heimilisfang: order_by
+  logo: order_by
+  logo_url: order_by
+  nafn: order_by
+  postnumer: order_by
+  sala_id: order_by
+  simi: order_by
+  vefslod: order_by
+}
+
+enum fs_sala_select_column {
+  email_tl
+  heimilisfang
+  logo
+  logo_url
+  nafn
+  postnumer
+  sala_id
+  simi
+  vefslod
+}
+
+type fs_sala_teng {
+  eigandi: Boolean
+  email: String
+  hlutverk: String
+  loggiltur: Boolean
+  main_order: Int
+  mynd_id: Int
+  nafn: String
+  sala_id: Int!
+  simi: String
+  tengilidur: Boolean
+  tengill_id: Int!
+}
+
+input fs_sala_teng_bool_exp {
+  _and: [fs_sala_teng_bool_exp!]
+  _not: fs_sala_teng_bool_exp
+  _or: [fs_sala_teng_bool_exp!]
+  eigandi: Boolean_comparison_exp
+  email: String_comparison_exp
+  hlutverk: String_comparison_exp
+  loggiltur: Boolean_comparison_exp
+  main_order: Int_comparison_exp
+  mynd_id: Int_comparison_exp
+  nafn: String_comparison_exp
+  sala_id: Int_comparison_exp
+  simi: String_comparison_exp
+  tengilidur: Boolean_comparison_exp
+  tengill_id: Int_comparison_exp
+}
+
+input fs_sala_teng_order_by {
+  eigandi: order_by
+  email: order_by
+  hlutverk: order_by
+  loggiltur: order_by
+  main_order: order_by
+  mynd_id: order_by
+  nafn: order_by
+  sala_id: order_by
+  simi: order_by
+  tengilidur: order_by
+  tengill_id: order_by
+}
+
+enum fs_sala_teng_select_column {
+  eigandi
+  email
+  hlutverk
+  loggiltur
+  main_order
+  mynd_id
+  nafn
+  sala_id
+  simi
+  tengilidur
+  tengill_id
+}
+
+type fs_test_fasteign {
+  address_search_id: String
+  agency: fs_sala  # An object relationship
+  ahvilandi_lan: Int
+  appended_land: float8
+  attachments(distinct_on: [fs_attachment_select_column!], limit: Int, offset: Int, order_by: [fs_attachment_order_by!], where: fs_attachment_bool_exp): [fs_attachment!]!  # An array relationship
+  aukaibud: Boolean
+  bilskur: Boolean
+  br_dags: timestamptz
+  brunabotamat: bigint
+  bygg_ar: smallint
+  created: timestamp
+  eign_id: Int
+  electric_car: Boolean
+  embed: String
+  fastano: Int
+  fasteignamat: bigint
+  fermetrar: float8
+  fjoldi_badherb: smallint
+  fjoldi_haeda: smallint
+  fjoldi_herb: smallint
+  fjoldi_svefnhb: smallint
+  gardur: Boolean
+  gata: String
+  generated_fts: tsvector
+  greidslumat: Boolean
+  heimilisfang: String
+  hverfi: String
+  images(distinct_on: [fs_img_select_column!], limit: Int, offset: Int, order_by: [fs_img_order_by!], where: fs_img_bool_exp): [fs_img!]!  # An array relationship
+  inngangur: String
+  latest_openhouse: fs_latest_openhouse  # An object relationship
+  latitude: float8
+  longitude: float8
+  lyfta: Boolean
+  lysing: String
+  makaskipti: Boolean
+  nybygging: Boolean
+  parking: Boolean
+  parking_shelter: Boolean
+  pet_allowed: Boolean
+  postal_code: fs_postal_code  # An object relationship
+  postfang: smallint
+  price_search_id: String
+  seniors: Boolean
+  sent_dags: timestamptz
+  size_search_id: String
+  skiptanleg: Boolean
+  svalir: Boolean
+  syna: Boolean
+  teg_eign: String
+  verd: bigint
+  wheelchair_acc: Boolean
+  zip_search_id: String
+}
+
+input fs_test_fasteign_bool_exp {
+  _and: [fs_test_fasteign_bool_exp!]
+  _not: fs_test_fasteign_bool_exp
+  _or: [fs_test_fasteign_bool_exp!]
+  address_search_id: String_comparison_exp
+  agency: fs_sala_bool_exp
+  ahvilandi_lan: Int_comparison_exp
+  appended_land: float8_comparison_exp
+  attachments: fs_attachment_bool_exp
+  aukaibud: Boolean_comparison_exp
+  bilskur: Boolean_comparison_exp
+  br_dags: timestamptz_comparison_exp
+  brunabotamat: bigint_comparison_exp
+  bygg_ar: smallint_comparison_exp
+  created: timestamp_comparison_exp
+  eign_id: Int_comparison_exp
+  electric_car: Boolean_comparison_exp
+  embed: String_comparison_exp
+  fastano: Int_comparison_exp
+  fasteignamat: bigint_comparison_exp
+  fermetrar: float8_comparison_exp
+  fjoldi_badherb: smallint_comparison_exp
+  fjoldi_haeda: smallint_comparison_exp
+  fjoldi_herb: smallint_comparison_exp
+  fjoldi_svefnhb: smallint_comparison_exp
+  gardur: Boolean_comparison_exp
+  gata: String_comparison_exp
+  generated_fts: tsvector_comparison_exp
+  greidslumat: Boolean_comparison_exp
+  heimilisfang: String_comparison_exp
+  hverfi: String_comparison_exp
+  images: fs_img_bool_exp
+  inngangur: String_comparison_exp
+  latest_openhouse: fs_latest_openhouse_bool_exp
+  latitude: float8_comparison_exp
+  longitude: float8_comparison_exp
+  lyfta: Boolean_comparison_exp
+  lysing: String_comparison_exp
+  makaskipti: Boolean_comparison_exp
+  nybygging: Boolean_comparison_exp
+  parking: Boolean_comparison_exp
+  parking_shelter: Boolean_comparison_exp
+  pet_allowed: Boolean_comparison_exp
+  postal_code: fs_postal_code_bool_exp
+  postfang: smallint_comparison_exp
+  price_search_id: String_comparison_exp
+  seniors: Boolean_comparison_exp
+  sent_dags: timestamptz_comparison_exp
+  size_search_id: String_comparison_exp
+  skiptanleg: Boolean_comparison_exp
+  svalir: Boolean_comparison_exp
+  syna: Boolean_comparison_exp
+  teg_eign: String_comparison_exp
+  verd: bigint_comparison_exp
+  wheelchair_acc: Boolean_comparison_exp
+  zip_search_id: String_comparison_exp
+}
+
+input fs_test_fasteign_order_by {
+  address_search_id: order_by
+  agency: fs_sala_order_by
+  ahvilandi_lan: order_by
+  appended_land: order_by
+  attachments_aggregate: fs_attachment_aggregate_order_by
+  aukaibud: order_by
+  bilskur: order_by
+  br_dags: order_by
+  brunabotamat: order_by
+  bygg_ar: order_by
+  created: order_by
+  eign_id: order_by
+  electric_car: order_by
+  embed: order_by
+  fastano: order_by
+  fasteignamat: order_by
+  fermetrar: order_by
+  fjoldi_badherb: order_by
+  fjoldi_haeda: order_by
+  fjoldi_herb: order_by
+  fjoldi_svefnhb: order_by
+  gardur: order_by
+  gata: order_by
+  generated_fts: order_by
+  greidslumat: order_by
+  heimilisfang: order_by
+  hverfi: order_by
+  images_aggregate: fs_img_aggregate_order_by
+  inngangur: order_by
+  latest_openhouse: fs_latest_openhouse_order_by
+  latitude: order_by
+  longitude: order_by
+  lyfta: order_by
+  lysing: order_by
+  makaskipti: order_by
+  nybygging: order_by
+  parking: order_by
+  parking_shelter: order_by
+  pet_allowed: order_by
+  postal_code: fs_postal_code_order_by
+  postfang: order_by
+  price_search_id: order_by
+  seniors: order_by
+  sent_dags: order_by
+  size_search_id: order_by
+  skiptanleg: order_by
+  svalir: order_by
+  syna: order_by
+  teg_eign: order_by
+  verd: order_by
+  wheelchair_acc: order_by
+  zip_search_id: order_by
+}
+
+enum fs_test_fasteign_select_column {
+  address_search_id
+  ahvilandi_lan
+  appended_land
+  aukaibud
+  bilskur
+  br_dags
+  brunabotamat
+  bygg_ar
+  created
+  eign_id
+  electric_car
+  embed
+  fastano
+  fasteignamat
+  fermetrar
+  fjoldi_badherb
+  fjoldi_haeda
+  fjoldi_herb
+  fjoldi_svefnhb
+  gardur
+  gata
+  generated_fts
+  greidslumat
+  heimilisfang
+  hverfi
+  inngangur
+  latitude
+  longitude
+  lyfta
+  lysing
+  makaskipti
+  nybygging
+  parking
+  parking_shelter
+  pet_allowed
+  postfang
+  price_search_id
+  seniors
+  sent_dags
+  size_search_id
+  skiptanleg
+  svalir
+  syna
+  teg_eign
+  verd
+  wheelchair_acc
+  zip_search_id
+}
+
+input fs_ts_search_args {
+  search: String
+}
+
+input fs_ts_search_test_args {
+  search: String
+}
+
+type mutation_root {
+  countPromo(clickCount: Boolean, seckey: String!): CountPromoResult
+  countRealestateView(id: Int!): CurrentCount
+  insert_fs_feedback(objects: [fs_feedback_insert_input!]!): fs_feedback_mutation_response  # insert data into the table: "fs_feedback"
+  sendInquiry(captcha: String!, captchaAnswer: String!, email: String!, name: String!, realestateId: Int!, telephone: String!, text: String!): InquireOutput
+}
+
+input numeric_comparison_exp {
+  _eq: numeric
+  _gt: numeric
+  _gte: numeric
+  _in: [numeric!]
+  _is_null: Boolean
+  _lt: numeric
+  _lte: numeric
+  _neq: numeric
+  _nin: [numeric!]
+}
+
+enum order_by {
+  asc
+  asc_nulls_first
+  asc_nulls_last
+  desc
+  desc_nulls_first
+  desc_nulls_last
+}
+
+type query_root {
+  fs_attachment(distinct_on: [fs_attachment_select_column!], limit: Int, offset: Int, order_by: [fs_attachment_order_by!], where: fs_attachment_bool_exp): [fs_attachment!]!  # fetch data from the table: "fs_attachment"
+  fs_attachment_by_pk(id: Int!): fs_attachment  # fetch data from the table: "fs_attachment" using primary key columns
+  fs_fasteign(distinct_on: [fs_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_fasteign_order_by!], where: fs_fasteign_bool_exp): [fs_fasteign!]!  # fetch data from the table: "fs_fasteign"
+  fs_fasteign_aggregate(distinct_on: [fs_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_fasteign_order_by!], where: fs_fasteign_bool_exp): fs_fasteign_aggregate!  # fetch aggregated fields from the table: "fs_fasteign"
+  fs_fasteign_by_pk(eign_id: Int!): fs_fasteign  # fetch data from the table: "fs_fasteign" using primary key columns
+  fs_favorite(distinct_on: [fs_favorite_select_column!], limit: Int, offset: Int, order_by: [fs_favorite_order_by!], where: fs_favorite_bool_exp): [fs_favorite!]!  # fetch data from the table: "fs_favorite"
+  fs_favorite_by_pk(id: Int!): fs_favorite  # fetch data from the table: "fs_favorite" using primary key columns
+  fs_img(distinct_on: [fs_img_select_column!], limit: Int, offset: Int, order_by: [fs_img_order_by!], where: fs_img_bool_exp): [fs_img!]!  # fetch data from the table: "fs_img"
+  fs_latest_openhouse(distinct_on: [fs_latest_openhouse_select_column!], limit: Int, offset: Int, order_by: [fs_latest_openhouse_order_by!], where: fs_latest_openhouse_bool_exp): [fs_latest_openhouse!]!  # fetch data from the table: "fs_latest_openhouse"
+  fs_popular_today(distinct_on: [fs_popular_today_select_column!], limit: Int, offset: Int, order_by: [fs_popular_today_order_by!], where: fs_popular_today_bool_exp): [fs_popular_today!]!  # fetch data from the table: "fs_popular_today"
+  fs_popular_week(distinct_on: [fs_popular_week_select_column!], limit: Int, offset: Int, order_by: [fs_popular_week_order_by!], where: fs_popular_week_bool_exp): [fs_popular_week!]!  # fetch data from the table: "fs_popular_week"
+  fs_popular_yesterday(distinct_on: [fs_popular_yesterday_select_column!], limit: Int, offset: Int, order_by: [fs_popular_yesterday_order_by!], where: fs_popular_yesterday_bool_exp): [fs_popular_yesterday!]!  # fetch data from the table: "fs_popular_yesterday"
+  fs_postal_code(distinct_on: [fs_postal_code_select_column!], limit: Int, offset: Int, order_by: [fs_postal_code_order_by!], where: fs_postal_code_bool_exp): [fs_postal_code!]!  # fetch data from the table: "fs_postal_code"
+  fs_purchase_history(distinct_on: [fs_purchase_history_select_column!], limit: Int, offset: Int, order_by: [fs_purchase_history_order_by!], where: fs_purchase_history_bool_exp): [fs_purchase_history!]!  # fetch data from the table: "fs_purchase_history"
+  fs_purchase_history_by_pk(id: Int!): fs_purchase_history  # fetch data from the table: "fs_purchase_history" using primary key columns
+  fs_random_agencies(distinct_on: [fs_random_agencies_select_column!], limit: Int, offset: Int, order_by: [fs_random_agencies_order_by!], where: fs_random_agencies_bool_exp): [fs_random_agencies!]!  # fetch data from the table: "fs_random_agencies"
+  fs_random_promo(args: fs_random_promo_args!, distinct_on: [fs_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_fasteign_order_by!], where: fs_fasteign_bool_exp): [fs_fasteign!]!  # execute function "fs_random_promo" which returns "fs_fasteign"
+  fs_random_promo_aggregate(args: fs_random_promo_args!, distinct_on: [fs_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_fasteign_order_by!], where: fs_fasteign_bool_exp): fs_fasteign_aggregate!  # execute function "fs_random_promo" and query aggregates on result of table type "fs_fasteign"
+  fs_realestate_ad(distinct_on: [fs_realestate_ad_select_column!], limit: Int, offset: Int, order_by: [fs_realestate_ad_order_by!], where: fs_realestate_ad_bool_exp): [fs_realestate_ad!]!  # fetch data from the table: "fs_realestate_ad"
+  fs_sala(distinct_on: [fs_sala_select_column!], limit: Int, offset: Int, order_by: [fs_sala_order_by!], where: fs_sala_bool_exp): [fs_sala!]!  # fetch data from the table: "fs_sala"
+  fs_sala_by_pk(sala_id: Int!): fs_sala  # fetch data from the table: "fs_sala" using primary key columns
+  fs_sala_teng(distinct_on: [fs_sala_teng_select_column!], limit: Int, offset: Int, order_by: [fs_sala_teng_order_by!], where: fs_sala_teng_bool_exp): [fs_sala_teng!]!  # fetch data from the table: "fs_sala_teng"
+  fs_sala_teng_by_pk(tengill_id: Int!): fs_sala_teng  # fetch data from the table: "fs_sala_teng" using primary key columns
+  fs_test_fasteign(distinct_on: [fs_test_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_test_fasteign_order_by!], where: fs_test_fasteign_bool_exp): [fs_test_fasteign!]!  # fetch data from the table: "fs_test_fasteign"
+  fs_ts_search(args: fs_ts_search_args!, distinct_on: [fs_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_fasteign_order_by!], where: fs_fasteign_bool_exp): [fs_fasteign!]!  # execute function "fs_ts_search" which returns "fs_fasteign"
+  fs_ts_search_aggregate(args: fs_ts_search_args!, distinct_on: [fs_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_fasteign_order_by!], where: fs_fasteign_bool_exp): fs_fasteign_aggregate!  # execute function "fs_ts_search" and query aggregates on result of table type "fs_fasteign"
+  fs_ts_search_test(args: fs_ts_search_test_args!, distinct_on: [fs_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_fasteign_order_by!], where: fs_fasteign_bool_exp): [fs_fasteign!]!  # execute function "fs_ts_search_test" which returns "fs_fasteign"
+  fs_ts_search_test_aggregate(args: fs_ts_search_test_args!, distinct_on: [fs_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_fasteign_order_by!], where: fs_fasteign_bool_exp): fs_fasteign_aggregate!  # execute function "fs_ts_search_test" and query aggregates on result of table type "fs_fasteign"
+  getInquiryCp: InquiryCp
+  rentals_photo(distinct_on: [rentals_photo_select_column!], limit: Int, offset: Int, order_by: [rentals_photo_order_by!], where: rentals_photo_bool_exp): [rentals_photo!]!  # fetch data from the table: "rentals.photo"
+  rentals_photo_by_pk(id: Int!): rentals_photo  # fetch data from the table: "rentals.photo" using primary key columns
+  rentals_postal_code(distinct_on: [rentals_postal_code_select_column!], limit: Int, offset: Int, order_by: [rentals_postal_code_order_by!], where: rentals_postal_code_bool_exp): [rentals_postal_code!]!  # fetch data from the table: "rentals.postal_code"
+  rentals_property(distinct_on: [rentals_property_select_column!], limit: Int, offset: Int, order_by: [rentals_property_order_by!], where: rentals_property_bool_exp): [rentals_property!]!  # fetch data from the table: "rentals.property"
+  rentals_property_aggregate(distinct_on: [rentals_property_select_column!], limit: Int, offset: Int, order_by: [rentals_property_order_by!], where: rentals_property_bool_exp): rentals_property_aggregate!  # fetch aggregated fields from the table: "rentals.property"
+  rentals_property_by_pk(id: Int!): rentals_property  # fetch data from the table: "rentals.property" using primary key columns
+  rentals_random_promo(args: rentals_random_promo_args!, distinct_on: [rentals_property_select_column!], limit: Int, offset: Int, order_by: [rentals_property_order_by!], where: rentals_property_bool_exp): [rentals_property!]!  # execute function "rentals.random_promo" which returns "rentals.property"
+  rentals_random_promo_aggregate(args: rentals_random_promo_args!, distinct_on: [rentals_property_select_column!], limit: Int, offset: Int, order_by: [rentals_property_order_by!], where: rentals_property_bool_exp): rentals_property_aggregate!  # execute function "rentals.random_promo" and query aggregates on result of table type "rentals.property"
+  rentals_ts_search(args: rentals_ts_search_args!, distinct_on: [rentals_property_select_column!], limit: Int, offset: Int, order_by: [rentals_property_order_by!], where: rentals_property_bool_exp): [rentals_property!]!  # execute function "rentals.ts_search" which returns "rentals.property"
+  rentals_ts_search_aggregate(args: rentals_ts_search_args!, distinct_on: [rentals_property_select_column!], limit: Int, offset: Int, order_by: [rentals_property_order_by!], where: rentals_property_bool_exp): rentals_property_aggregate!  # execute function "rentals.ts_search" and query aggregates on result of table type "rentals.property"
+}
+
+type rentals_photo {
+  big: String
+  big_h: String
+  e_low: String
+  id: Int!
+  low: String
+  ordering: Int
+  regular: String
+  regular_h: String
+  small: String
+  small_h: String
+}
+
+input rentals_photo_aggregate_order_by {
+  avg: rentals_photo_avg_order_by
+  count: order_by
+  max: rentals_photo_max_order_by
+  min: rentals_photo_min_order_by
+  stddev: rentals_photo_stddev_order_by
+  stddev_pop: rentals_photo_stddev_pop_order_by
+  stddev_samp: rentals_photo_stddev_samp_order_by
+  sum: rentals_photo_sum_order_by
+  var_pop: rentals_photo_var_pop_order_by
+  var_samp: rentals_photo_var_samp_order_by
+  variance: rentals_photo_variance_order_by
+}
+
+input rentals_photo_avg_order_by {
+  id: order_by
+  ordering: order_by
+}
+
+input rentals_photo_bool_exp {
+  _and: [rentals_photo_bool_exp!]
+  _not: rentals_photo_bool_exp
+  _or: [rentals_photo_bool_exp!]
+  big: String_comparison_exp
+  big_h: String_comparison_exp
+  e_low: String_comparison_exp
+  id: Int_comparison_exp
+  low: String_comparison_exp
+  ordering: Int_comparison_exp
+  regular: String_comparison_exp
+  regular_h: String_comparison_exp
+  small: String_comparison_exp
+  small_h: String_comparison_exp
+}
+
+input rentals_photo_max_order_by {
+  big: order_by
+  big_h: order_by
+  e_low: order_by
+  id: order_by
+  low: order_by
+  ordering: order_by
+  regular: order_by
+  regular_h: order_by
+  small: order_by
+  small_h: order_by
+}
+
+input rentals_photo_min_order_by {
+  big: order_by
+  big_h: order_by
+  e_low: order_by
+  id: order_by
+  low: order_by
+  ordering: order_by
+  regular: order_by
+  regular_h: order_by
+  small: order_by
+  small_h: order_by
+}
+
+input rentals_photo_order_by {
+  big: order_by
+  big_h: order_by
+  e_low: order_by
+  id: order_by
+  low: order_by
+  ordering: order_by
+  regular: order_by
+  regular_h: order_by
+  small: order_by
+  small_h: order_by
+}
+
+enum rentals_photo_select_column {
+  big
+  big_h
+  e_low
+  id
+  low
+  ordering
+  regular
+  regular_h
+  small
+  small_h
+}
+
+input rentals_photo_stddev_order_by {
+  id: order_by
+  ordering: order_by
+}
+
+input rentals_photo_stddev_pop_order_by {
+  id: order_by
+  ordering: order_by
+}
+
+input rentals_photo_stddev_samp_order_by {
+  id: order_by
+  ordering: order_by
+}
+
+input rentals_photo_sum_order_by {
+  id: order_by
+  ordering: order_by
+}
+
+input rentals_photo_var_pop_order_by {
+  id: order_by
+  ordering: order_by
+}
+
+input rentals_photo_var_samp_order_by {
+  id: order_by
+  ordering: order_by
+}
+
+input rentals_photo_variance_order_by {
+  id: order_by
+  ordering: order_by
+}
+
+type rentals_postal_code {
+  baer: String
+  baer_thgf: String
+  hverfi: String
+  landshluti: smallint
+  postnr: Int
+  rt_count: bigint
+}
+
+input rentals_postal_code_bool_exp {
+  _and: [rentals_postal_code_bool_exp!]
+  _not: rentals_postal_code_bool_exp
+  _or: [rentals_postal_code_bool_exp!]
+  baer: String_comparison_exp
+  baer_thgf: String_comparison_exp
+  hverfi: String_comparison_exp
+  landshluti: smallint_comparison_exp
+  postnr: Int_comparison_exp
+  rt_count: bigint_comparison_exp
+}
+
+input rentals_postal_code_order_by {
+  baer: order_by
+  baer_thgf: order_by
+  hverfi: order_by
+  landshluti: order_by
+  postnr: order_by
+  rt_count: order_by
+}
+
+enum rentals_postal_code_select_column {
+  baer
+  baer_thgf
+  hverfi
+  landshluti
+  postnr
+  rt_count
+}
+
+type rentals_property {
+  address: String!
+  agency: fs_sala  # An object relationship
+  available_from: date
+  available_until: date
+  created: timestamp!
+  description: String
+  favorite: fs_favorite  # An object relationship
+  from_leiguskjol: Boolean!
+  id: Int!
+  images(distinct_on: [rentals_photo_select_column!], limit: Int, offset: Int, order_by: [rentals_photo_order_by!], where: rentals_photo_bool_exp): [rentals_photo!]!  # An array relationship
+  lift: Boolean
+  longtime: Boolean
+  normalized_address: String
+  pet_allowed: Boolean
+  postal_code: rentals_postal_code  # An object relationship
+  price: Int!
+  promo: fs_realestate_ad  # An object relationship
+  rooms: smallint
+  show_from_date: date
+  show_until_date: date
+  size: Int!
+  title: String
+  type_id: Int!
+  updated: timestamp
+  wheelchair_acc: Boolean
+  zipcode: Int!
+}
+
+type rentals_property_aggregate {
+  aggregate: rentals_property_aggregate_fields
+  nodes: [rentals_property!]!
+}
+
+type rentals_property_aggregate_fields {
+  avg: rentals_property_avg_fields
+  count(columns: [rentals_property_select_column!], distinct: Boolean): Int!
+  max: rentals_property_max_fields
+  min: rentals_property_min_fields
+  stddev: rentals_property_stddev_fields
+  stddev_pop: rentals_property_stddev_pop_fields
+  stddev_samp: rentals_property_stddev_samp_fields
+  sum: rentals_property_sum_fields
+  var_pop: rentals_property_var_pop_fields
+  var_samp: rentals_property_var_samp_fields
+  variance: rentals_property_variance_fields
+}
+
+type rentals_property_avg_fields {
+  id: Float
+  price: Float
+  rooms: Float
+  size: Float
+  type_id: Float
+  zipcode: Float
+}
+
+input rentals_property_bool_exp {
+  _and: [rentals_property_bool_exp!]
+  _not: rentals_property_bool_exp
+  _or: [rentals_property_bool_exp!]
+  address: String_comparison_exp
+  agency: fs_sala_bool_exp
+  available_from: date_comparison_exp
+  available_until: date_comparison_exp
+  created: timestamp_comparison_exp
+  description: String_comparison_exp
+  favorite: fs_favorite_bool_exp
+  from_leiguskjol: Boolean_comparison_exp
+  id: Int_comparison_exp
+  images: rentals_photo_bool_exp
+  lift: Boolean_comparison_exp
+  longtime: Boolean_comparison_exp
+  normalized_address: String_comparison_exp
+  pet_allowed: Boolean_comparison_exp
+  postal_code: rentals_postal_code_bool_exp
+  price: Int_comparison_exp
+  promo: fs_realestate_ad_bool_exp
+  rooms: smallint_comparison_exp
+  show_from_date: date_comparison_exp
+  show_until_date: date_comparison_exp
+  size: Int_comparison_exp
+  title: String_comparison_exp
+  type_id: Int_comparison_exp
+  updated: timestamp_comparison_exp
+  wheelchair_acc: Boolean_comparison_exp
+  zipcode: Int_comparison_exp
+}
+
+type rentals_property_max_fields {
+  address: String
+  available_from: date
+  available_until: date
+  created: timestamp
+  description: String
+  id: Int
+  normalized_address: String
+  price: Int
+  rooms: smallint
+  show_from_date: date
+  show_until_date: date
+  size: Int
+  title: String
+  type_id: Int
+  updated: timestamp
+  zipcode: Int
+}
+
+type rentals_property_min_fields {
+  address: String
+  available_from: date
+  available_until: date
+  created: timestamp
+  description: String
+  id: Int
+  normalized_address: String
+  price: Int
+  rooms: smallint
+  show_from_date: date
+  show_until_date: date
+  size: Int
+  title: String
+  type_id: Int
+  updated: timestamp
+  zipcode: Int
+}
+
+input rentals_property_order_by {
+  address: order_by
+  agency: fs_sala_order_by
+  available_from: order_by
+  available_until: order_by
+  created: order_by
+  description: order_by
+  favorite: fs_favorite_order_by
+  from_leiguskjol: order_by
+  id: order_by
+  images_aggregate: rentals_photo_aggregate_order_by
+  lift: order_by
+  longtime: order_by
+  normalized_address: order_by
+  pet_allowed: order_by
+  postal_code: rentals_postal_code_order_by
+  price: order_by
+  promo: fs_realestate_ad_order_by
+  rooms: order_by
+  show_from_date: order_by
+  show_until_date: order_by
+  size: order_by
+  title: order_by
+  type_id: order_by
+  updated: order_by
+  wheelchair_acc: order_by
+  zipcode: order_by
+}
+
+enum rentals_property_select_column {
+  address
+  available_from
+  available_until
+  created
+  description
+  from_leiguskjol
+  id
+  lift
+  longtime
+  normalized_address
+  pet_allowed
+  price
+  rooms
+  show_from_date
+  show_until_date
+  size
+  title
+  type_id
+  updated
+  wheelchair_acc
+  zipcode
+}
+
+type rentals_property_stddev_fields {
+  id: Float
+  price: Float
+  rooms: Float
+  size: Float
+  type_id: Float
+  zipcode: Float
+}
+
+type rentals_property_stddev_pop_fields {
+  id: Float
+  price: Float
+  rooms: Float
+  size: Float
+  type_id: Float
+  zipcode: Float
+}
+
+type rentals_property_stddev_samp_fields {
+  id: Float
+  price: Float
+  rooms: Float
+  size: Float
+  type_id: Float
+  zipcode: Float
+}
+
+type rentals_property_sum_fields {
+  id: Int
+  price: Int
+  rooms: smallint
+  size: Int
+  type_id: Int
+  zipcode: Int
+}
+
+type rentals_property_var_pop_fields {
+  id: Float
+  price: Float
+  rooms: Float
+  size: Float
+  type_id: Float
+  zipcode: Float
+}
+
+type rentals_property_var_samp_fields {
+  id: Float
+  price: Float
+  rooms: Float
+  size: Float
+  type_id: Float
+  zipcode: Float
+}
+
+type rentals_property_variance_fields {
+  id: Float
+  price: Float
+  rooms: Float
+  size: Float
+  type_id: Float
+  zipcode: Float
+}
+
+input rentals_random_promo_args {
+  search: String
+}
+
+input rentals_ts_search_args {
+  search: String
+}
+
+input smallint_comparison_exp {
+  _eq: smallint
+  _gt: smallint
+  _gte: smallint
+  _in: [smallint!]
+  _is_null: Boolean
+  _lt: smallint
+  _lte: smallint
+  _neq: smallint
+  _nin: [smallint!]
+}
+
+type subscription_root {
+  fs_attachment(distinct_on: [fs_attachment_select_column!], limit: Int, offset: Int, order_by: [fs_attachment_order_by!], where: fs_attachment_bool_exp): [fs_attachment!]!  # fetch data from the table: "fs_attachment"
+  fs_attachment_by_pk(id: Int!): fs_attachment  # fetch data from the table: "fs_attachment" using primary key columns
+  fs_fasteign(distinct_on: [fs_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_fasteign_order_by!], where: fs_fasteign_bool_exp): [fs_fasteign!]!  # fetch data from the table: "fs_fasteign"
+  fs_fasteign_aggregate(distinct_on: [fs_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_fasteign_order_by!], where: fs_fasteign_bool_exp): fs_fasteign_aggregate!  # fetch aggregated fields from the table: "fs_fasteign"
+  fs_fasteign_by_pk(eign_id: Int!): fs_fasteign  # fetch data from the table: "fs_fasteign" using primary key columns
+  fs_favorite(distinct_on: [fs_favorite_select_column!], limit: Int, offset: Int, order_by: [fs_favorite_order_by!], where: fs_favorite_bool_exp): [fs_favorite!]!  # fetch data from the table: "fs_favorite"
+  fs_favorite_by_pk(id: Int!): fs_favorite  # fetch data from the table: "fs_favorite" using primary key columns
+  fs_img(distinct_on: [fs_img_select_column!], limit: Int, offset: Int, order_by: [fs_img_order_by!], where: fs_img_bool_exp): [fs_img!]!  # fetch data from the table: "fs_img"
+  fs_latest_openhouse(distinct_on: [fs_latest_openhouse_select_column!], limit: Int, offset: Int, order_by: [fs_latest_openhouse_order_by!], where: fs_latest_openhouse_bool_exp): [fs_latest_openhouse!]!  # fetch data from the table: "fs_latest_openhouse"
+  fs_popular_today(distinct_on: [fs_popular_today_select_column!], limit: Int, offset: Int, order_by: [fs_popular_today_order_by!], where: fs_popular_today_bool_exp): [fs_popular_today!]!  # fetch data from the table: "fs_popular_today"
+  fs_popular_week(distinct_on: [fs_popular_week_select_column!], limit: Int, offset: Int, order_by: [fs_popular_week_order_by!], where: fs_popular_week_bool_exp): [fs_popular_week!]!  # fetch data from the table: "fs_popular_week"
+  fs_popular_yesterday(distinct_on: [fs_popular_yesterday_select_column!], limit: Int, offset: Int, order_by: [fs_popular_yesterday_order_by!], where: fs_popular_yesterday_bool_exp): [fs_popular_yesterday!]!  # fetch data from the table: "fs_popular_yesterday"
+  fs_postal_code(distinct_on: [fs_postal_code_select_column!], limit: Int, offset: Int, order_by: [fs_postal_code_order_by!], where: fs_postal_code_bool_exp): [fs_postal_code!]!  # fetch data from the table: "fs_postal_code"
+  fs_purchase_history(distinct_on: [fs_purchase_history_select_column!], limit: Int, offset: Int, order_by: [fs_purchase_history_order_by!], where: fs_purchase_history_bool_exp): [fs_purchase_history!]!  # fetch data from the table: "fs_purchase_history"
+  fs_purchase_history_by_pk(id: Int!): fs_purchase_history  # fetch data from the table: "fs_purchase_history" using primary key columns
+  fs_random_agencies(distinct_on: [fs_random_agencies_select_column!], limit: Int, offset: Int, order_by: [fs_random_agencies_order_by!], where: fs_random_agencies_bool_exp): [fs_random_agencies!]!  # fetch data from the table: "fs_random_agencies"
+  fs_random_promo(args: fs_random_promo_args!, distinct_on: [fs_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_fasteign_order_by!], where: fs_fasteign_bool_exp): [fs_fasteign!]!  # execute function "fs_random_promo" which returns "fs_fasteign"
+  fs_random_promo_aggregate(args: fs_random_promo_args!, distinct_on: [fs_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_fasteign_order_by!], where: fs_fasteign_bool_exp): fs_fasteign_aggregate!  # execute function "fs_random_promo" and query aggregates on result of table type "fs_fasteign"
+  fs_realestate_ad(distinct_on: [fs_realestate_ad_select_column!], limit: Int, offset: Int, order_by: [fs_realestate_ad_order_by!], where: fs_realestate_ad_bool_exp): [fs_realestate_ad!]!  # fetch data from the table: "fs_realestate_ad"
+  fs_sala(distinct_on: [fs_sala_select_column!], limit: Int, offset: Int, order_by: [fs_sala_order_by!], where: fs_sala_bool_exp): [fs_sala!]!  # fetch data from the table: "fs_sala"
+  fs_sala_by_pk(sala_id: Int!): fs_sala  # fetch data from the table: "fs_sala" using primary key columns
+  fs_sala_teng(distinct_on: [fs_sala_teng_select_column!], limit: Int, offset: Int, order_by: [fs_sala_teng_order_by!], where: fs_sala_teng_bool_exp): [fs_sala_teng!]!  # fetch data from the table: "fs_sala_teng"
+  fs_sala_teng_by_pk(tengill_id: Int!): fs_sala_teng  # fetch data from the table: "fs_sala_teng" using primary key columns
+  fs_test_fasteign(distinct_on: [fs_test_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_test_fasteign_order_by!], where: fs_test_fasteign_bool_exp): [fs_test_fasteign!]!  # fetch data from the table: "fs_test_fasteign"
+  fs_ts_search(args: fs_ts_search_args!, distinct_on: [fs_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_fasteign_order_by!], where: fs_fasteign_bool_exp): [fs_fasteign!]!  # execute function "fs_ts_search" which returns "fs_fasteign"
+  fs_ts_search_aggregate(args: fs_ts_search_args!, distinct_on: [fs_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_fasteign_order_by!], where: fs_fasteign_bool_exp): fs_fasteign_aggregate!  # execute function "fs_ts_search" and query aggregates on result of table type "fs_fasteign"
+  fs_ts_search_test(args: fs_ts_search_test_args!, distinct_on: [fs_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_fasteign_order_by!], where: fs_fasteign_bool_exp): [fs_fasteign!]!  # execute function "fs_ts_search_test" which returns "fs_fasteign"
+  fs_ts_search_test_aggregate(args: fs_ts_search_test_args!, distinct_on: [fs_fasteign_select_column!], limit: Int, offset: Int, order_by: [fs_fasteign_order_by!], where: fs_fasteign_bool_exp): fs_fasteign_aggregate!  # execute function "fs_ts_search_test" and query aggregates on result of table type "fs_fasteign"
+  rentals_photo(distinct_on: [rentals_photo_select_column!], limit: Int, offset: Int, order_by: [rentals_photo_order_by!], where: rentals_photo_bool_exp): [rentals_photo!]!  # fetch data from the table: "rentals.photo"
+  rentals_photo_by_pk(id: Int!): rentals_photo  # fetch data from the table: "rentals.photo" using primary key columns
+  rentals_postal_code(distinct_on: [rentals_postal_code_select_column!], limit: Int, offset: Int, order_by: [rentals_postal_code_order_by!], where: rentals_postal_code_bool_exp): [rentals_postal_code!]!  # fetch data from the table: "rentals.postal_code"
+  rentals_property(distinct_on: [rentals_property_select_column!], limit: Int, offset: Int, order_by: [rentals_property_order_by!], where: rentals_property_bool_exp): [rentals_property!]!  # fetch data from the table: "rentals.property"
+  rentals_property_aggregate(distinct_on: [rentals_property_select_column!], limit: Int, offset: Int, order_by: [rentals_property_order_by!], where: rentals_property_bool_exp): rentals_property_aggregate!  # fetch aggregated fields from the table: "rentals.property"
+  rentals_property_by_pk(id: Int!): rentals_property  # fetch data from the table: "rentals.property" using primary key columns
+  rentals_random_promo(args: rentals_random_promo_args!, distinct_on: [rentals_property_select_column!], limit: Int, offset: Int, order_by: [rentals_property_order_by!], where: rentals_property_bool_exp): [rentals_property!]!  # execute function "rentals.random_promo" which returns "rentals.property"
+  rentals_random_promo_aggregate(args: rentals_random_promo_args!, distinct_on: [rentals_property_select_column!], limit: Int, offset: Int, order_by: [rentals_property_order_by!], where: rentals_property_bool_exp): rentals_property_aggregate!  # execute function "rentals.random_promo" and query aggregates on result of table type "rentals.property"
+  rentals_ts_search(args: rentals_ts_search_args!, distinct_on: [rentals_property_select_column!], limit: Int, offset: Int, order_by: [rentals_property_order_by!], where: rentals_property_bool_exp): [rentals_property!]!  # execute function "rentals.ts_search" which returns "rentals.property"
+  rentals_ts_search_aggregate(args: rentals_ts_search_args!, distinct_on: [rentals_property_select_column!], limit: Int, offset: Int, order_by: [rentals_property_order_by!], where: rentals_property_bool_exp): rentals_property_aggregate!  # execute function "rentals.ts_search" and query aggregates on result of table type "rentals.property"
+}
+
+input time_comparison_exp {
+  _eq: time
+  _gt: time
+  _gte: time
+  _in: [time!]
+  _is_null: Boolean
+  _lt: time
+  _lte: time
+  _neq: time
+  _nin: [time!]
+}
+
+input timestamp_comparison_exp {
+  _eq: timestamp
+  _gt: timestamp
+  _gte: timestamp
+  _in: [timestamp!]
+  _is_null: Boolean
+  _lt: timestamp
+  _lte: timestamp
+  _neq: timestamp
+  _nin: [timestamp!]
+}
+
+input timestamptz_comparison_exp {
+  _eq: timestamptz
+  _gt: timestamptz
+  _gte: timestamptz
+  _in: [timestamptz!]
+  _is_null: Boolean
+  _lt: timestamptz
+  _lte: timestamptz
+  _neq: timestamptz
+  _nin: [timestamptz!]
+}
+
+input tsvector_comparison_exp {
+  _eq: tsvector
+  _gt: tsvector
+  _gte: tsvector
+  _in: [tsvector!]
+  _is_null: Boolean
+  _lt: tsvector
+  _lte: tsvector
+  _neq: tsvector
+  _nin: [tsvector!]
+}
